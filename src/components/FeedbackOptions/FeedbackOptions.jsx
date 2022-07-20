@@ -3,30 +3,16 @@ import styles from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ onLeaveFeedback, options }) => (
   <div>
-    <button
-      className={styles.btnStyle}
-      type="button"
-      name={options[0]}
-      onClick={onLeaveFeedback}
-    >
-      Good
-    </button>
-    <button
-      className={styles.btnStyle}
-      type="button"
-      name={options[1]}
-      onClick={onLeaveFeedback}
-    >
-      Neutral
-    </button>
-    <button
-      className={styles.btnStyle}
-      type="button"
-      name={options[2]}
-      onClick={onLeaveFeedback}
-    >
-      Bad
-    </button>
+    {options.map(key => (
+      <button
+        key={key}
+        className={styles.btnStyle}
+        type="button"
+        onClick={() => onLeaveFeedback(key)}
+      >
+        {key}
+      </button>
+    ))}
   </div>
 );
 

@@ -11,8 +11,7 @@ export default function App() {
     bad: 0,
   });
 
-  const onLeaveFeedback = ({ target }) => {
-    const name = target.name;
+  const onLeaveFeedback = name => {
     setState(prevState => {
       return { ...prevState, [name]: prevState[name] + 1 };
     });
